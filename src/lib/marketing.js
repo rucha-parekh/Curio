@@ -3,19 +3,19 @@
 export const CONTACT_EMAIL = "hello@curio-learning.example"; // TODO: replace with the real address
 
 export const FOUNDERS = [
-  { name: "Rucha", role: "Techie", brings: "[One line on what you bring to Curio]", buddy: "nova" },
-  { name: "Usha", role: "Visionary", brings: "[One line on what you bring to Curio]", buddy: "kiko" },
-  { name: "Shrey", role: "Operations", brings: "[One line on what you bring to Curio]", buddy: "zip" },
+  { name: "Rucha", role: "Techie", buddy: "nova" },
+  { name: "Usha", role: "Visionary", buddy: "kiko" },
+  { name: "Shrey", role: "Operations", buddy: "zip" },
 ];
 
-export const UNIVERSITY = "[University]";
+export const UNIVERSITY = "McMaster University";
 
 export const JOURNEY = [
-  { when: "[Month Year]", title: "The idea, in class", text: "In our Master of Management in AI and Analytics programme we kept asking: why do AI study tools just hand out answers?" },
-  { when: "[Month Year]", title: "First prototype: QuestLearn", text: "Short quests, a study buddy and a teacher view, built so we could put something real in front of people." },
-  { when: "[Month Year]", title: "Testing with [teachers / classmates]", text: "We watched how people used it and changed what didn't help." },
-  { when: "[Month Year]", title: "Renamed to Curio", text: "We added streaks with rest days, badges, family accounts, buddy voices and accessibility features." },
-  { when: "Next", title: "Classroom pilots", text: "Pilots with partner schools and a 2-month free trial for any school that wants to try Curio." },
+  { title: "The idea, in class", text: "In our Master of Management in AI and Analytics programme we kept asking: why do AI study tools just hand out answers?" },
+  { title: "First prototype: QuestLearn", text: "Short quests, a study buddy and a teacher view, built so we could put something real in front of people." },
+  { title: "Testing with [teachers / classmates]", text: "We watched how people used it and changed what didn't help." },
+  { title: "Renamed to Curio", text: "We added streaks with rest days, badges, family accounts, buddy voices and accessibility features." },
+  { title: "Classroom pilots", text: "Pilots with partner schools and a 2-month free trial for any school that wants to try Curio." },
 ];
 
 export const VALUES = [
