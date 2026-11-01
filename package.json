@@ -1,0 +1,28 @@
+{
+  "name": "curio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:single": "vite build --mode single",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@fontsource/caveat": "5.2.8",
+    "@fontsource/fredoka": "5.2.8",
+    "@fontsource/nunito": "5.2.7",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.1.11",
+    "@vitejs/plugin-react": "4.6.0",
+    "tailwindcss": "4.1.11",
+    "vite": "6.3.5",
+    "vite-plugin-singlefile": "2.3.0",
+    "vitest": "3.2.4"
+  }
+}

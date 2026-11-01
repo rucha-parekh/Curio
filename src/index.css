@@ -1,0 +1,164 @@
+@import "tailwindcss";
+@import "@fontsource/fredoka/latin-500.css";
+@import "@fontsource/fredoka/latin-600.css";
+@import "@fontsource/nunito/latin-400.css";
+@import "@fontsource/nunito/latin-700.css";
+@import "@fontsource/nunito/latin-800.css";
+@import "@fontsource/caveat/latin-700.css";
+
+/* Palette from the inspiration boards: lilac + mint + butter (academy site),
+   nectarine / pêche / menthe / lagune (room palette), soft sky (storybook site). */
+:root {
+  color-scheme: light;
+  --page: #f7f3ff;
+  --card: #ffffff;
+  --soft: #f1ecfb;
+  --ink: #241f3a;
+  --ink-2: #5d5677;
+  --line: #e4ddf3;
+  --brand: #241f3a;
+  --on-brand: #ffffff;
+  --lilac: #c9b6ff;
+  --lilac-2: #b79cff;
+  --mint: #8ee3b3;
+  --mint-2: #4fcf8a;
+  --butter: #ffe98a;
+  --peach: #f9b95c;
+  --nectarine: #f2a598;
+  --menthe: #96c7b3;
+  --lagune: #8fc1d1;
+  --sky: #cfe9f3;
+  --good: #1e8a52;
+  --good-bg: #dcf6e6;
+  --nudge: #6a4fd8;
+  --nudge-bg: #ede7ff;
+  --focus: #6a4fd8;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #16132a;
+    --card: #211d38;
+    --soft: #2a2546;
+    --ink: #f4f1ff;
+    --ink-2: #bfb8db;
+    --line: #3a3460;
+    --brand: #f4f1ff;
+    --on-brand: #16132a;
+    --good: #7fe0a8;
+    --good-bg: #173726;
+    --nudge: #c7b8ff;
+    --nudge-bg: #2e2656;
+    --focus: #c7b8ff;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #16132a; --card: #211d38; --soft: #2a2546; --ink: #f4f1ff; --ink-2: #bfb8db; --line: #3a3460;
+  --brand: #f4f1ff; --on-brand: #16132a; --good: #7fe0a8; --good-bg: #173726; --nudge: #c7b8ff; --nudge-bg: #2e2656; --focus: #c7b8ff;
+}
+
+@theme inline {
+  --font-sans: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Fredoka", "Nunito", system-ui, sans-serif;
+  --font-hand: "Caveat", "Comic Sans MS", cursive;
+  --color-page: var(--page);
+  --color-card: var(--card);
+  --color-soft: var(--soft);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-on-brand: var(--on-brand);
+  --color-lilac: var(--lilac);
+  --color-lilac-2: var(--lilac-2);
+  --color-mint: var(--mint);
+  --color-mint-2: var(--mint-2);
+  --color-butter: var(--butter);
+  --color-peach: var(--peach);
+  --color-nectarine: var(--nectarine);
+  --color-menthe: var(--menthe);
+  --color-lagune: var(--lagune);
+  --color-sky: var(--sky);
+  --color-good: var(--good);
+  --color-good-bg: var(--good-bg);
+  --color-nudge: var(--nudge);
+  --color-nudge-bg: var(--nudge-bg);
+  --color-pastel-ink: #241f3a;
+}
+
+html { font-size: 100%; }
+html[data-text="1"] { font-size: 112.5%; }
+html[data-text="2"] { font-size: 125%; }
+html, body { height: 100%; }
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, .font-display { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em; }
+.tabular { font-variant-numeric: tabular-nums; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 10px; }
+.skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 80; background: var(--brand); color: var(--on-brand); padding: .75rem 1rem; border-radius: .75rem; }
+.skip-link:focus { top: 1rem; }
+
+/* Pastel cards always keep dark text, in both themes. */
+.pastel { color: #241f3a; }
+.pastel .muted { color: #4a4362; }
+
+/* Buddy motion: a gentle float and a blink, plus moods. Off when the device (or the settings menu) asks for less motion. */
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes blink { 0%, 94%, 100% { transform: scaleY(1); } 97% { transform: scaleY(0.1); } }
+@keyframes pop { from { opacity: 0; transform: translateY(8px) scale(.96); } to { opacity: 1; transform: none; } }
+@keyframes wiggle { 0%,100% { transform: rotate(0); } 25% { transform: rotate(-6deg); } 75% { transform: rotate(6deg); } }
+@keyframes twirl { 0% { transform: perspective(400px) rotateY(0) scale(.4); opacity: 0; } 20% { opacity: 1; } 75% { transform: perspective(400px) rotateY(720deg) scale(1.12); } 100% { transform: perspective(400px) rotateY(720deg) scale(1); } }
+@keyframes cheer { 0%,100% { transform: translateY(0) scale(1); } 30% { transform: translateY(-18px) scale(1.06, .96); } 50% { transform: translateY(0) scale(1.04, .94); } 70% { transform: translateY(-9px); } }
+@keyframes droop { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(5px) rotate(-5deg); } }
+@keyframes attention { 0%,100% { transform: translateY(0) rotate(0); } 10% { transform: translateY(-14px) rotate(-8deg); } 20% { transform: translateY(0) rotate(8deg); } 30% { transform: translateY(-10px) rotate(-6deg); } 40% { transform: translateY(0) rotate(0); } }
+@keyframes wave-arm { 0%,100% { transform: rotate(0); } 50% { transform: rotate(-28deg); } }
+@keyframes heart-up { 0% { opacity: 0; transform: translate(0, 0) scale(.5); } 15% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--dx, 0), -110px) scale(1.25) rotate(var(--rot, 0deg)); } }
+@keyframes shout-in { 0% { transform: scale(.4) rotate(-6deg); opacity: 0; } 60% { transform: scale(1.12) rotate(2deg); opacity: 1; } 100% { transform: scale(1) rotate(0); } }
+.buddy-float { animation: float 3.2s ease-in-out infinite; }
+.buddy-eyes { transform-box: fill-box; transform-origin: center; animation: blink 5s infinite; }
+.buddy-twirl { animation: twirl 1.5s cubic-bezier(.3,.7,.3,1) both; }
+.buddy-cheer { animation: cheer .7s ease-out 3; }
+.buddy-sad { animation: droop 1.6s ease-in-out 2; }
+.buddy-attention { animation: attention 1.6s ease-in-out 4; }
+.buddy-wave-arm { transform-box: fill-box; transform-origin: 20% 90%; animation: wave-arm .45s ease-in-out infinite; }
+.heart { position: absolute; bottom: 60%; animation: heart-up 1.8s ease-out both; pointer-events: none; }
+.shout { animation: shout-in .45s cubic-bezier(.3,1.6,.5,1) both; }
+.pop { animation: pop .22s ease-out both; }
+.wiggle { animation: wiggle .5s ease-in-out 2; }
+@media (prefers-reduced-motion: reduce) {
+  .buddy-float, .buddy-eyes, .pop, .wiggle, .buddy-twirl, .buddy-cheer, .buddy-sad, .buddy-attention, .buddy-wave-arm, .shout { animation: none; }
+  .heart { display: none; }
+}
+html[data-motion="reduce"] *, html[data-motion="reduce"] *::before, html[data-motion="reduce"] *::after { animation: none !important; transition: none !important; }
+html[data-motion="reduce"] .heart { display: none; }
+
+/* Dyslexia-friendly reading: a rounded, even font (OpenDyslexic if installed), wider spacing, no handwriting fonts. */
+html[data-font="dyslexic"] body, html[data-font="dyslexic"] body * {
+  font-family: "OpenDyslexic", "Lexend", "Atkinson Hyperlegible", Verdana, Tahoma, sans-serif !important;
+  font-style: normal !important;
+}
+html[data-font="dyslexic"] body { letter-spacing: .035em; word-spacing: .16em; line-height: 1.8; }
+
+/* Colour-blind-safe palette (Okabe-Ito): "done" is blue and "late/missing" is orange, so they never rely on red vs green.
+   Status is also always shown with words or icons, not colour alone. */
+:root[data-cb="1"] {
+  --mint-2: #0072b2; --mint: #9ccbe8; --good: #005a8c; --good-bg: #d8ecf8;
+  --nectarine: #f0b04a; --peach: #e69f00; --lilac-2: #a07ad6; --menthe: #9ccbe8;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-cb="1"]:not([data-theme="light"]) { --good: #7cc4ef; --good-bg: #10324a; }
+}
+:root[data-cb="1"][data-theme="dark"] { --good: #7cc4ef; --good-bg: #10324a; }
