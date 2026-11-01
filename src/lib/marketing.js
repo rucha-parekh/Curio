@@ -13,7 +13,7 @@ export const UNIVERSITY = "McMaster University";
 export const JOURNEY = [
   { title: "The idea, in class", text: "In our Master of Management in AI and Analytics programme we kept asking: why do AI study tools just hand out answers?" },
   { title: "First prototype: QuestLearn", text: "Short quests, a study buddy and a teacher view, built so we could put something real in front of people." },
-  { title: "Testing with [teachers / classmates]", text: "We watched how people used it and changed what didn't help." },
+  { title: "Testing with teachers & classmates", text: "We watched how people used it and changed what didn't help." },
   { title: "Renamed to Curio", text: "We added streaks with rest days, badges, family accounts, buddy voices and accessibility features." },
   { title: "Classroom pilots", text: "Pilots with partner schools and a 2-month free trial for any school that wants to try Curio." },
 ];
